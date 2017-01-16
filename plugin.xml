@@ -13,6 +13,10 @@
     <preference name="URL_SCHEME" />
     <preference name="DEEPLINK_SCHEME" default="https" />
     <preference name="DEEPLINK_HOST" default="" />
+    <preference name="DEEPLINK_2_HOST" default=" " />
+    <preference name="DEEPLINK_3_HOST" default=" " />
+    <preference name="DEEPLINK_4_HOST" default=" " />
+    <preference name="DEEPLINK_5_HOST" default=" " />
 
     <!-- Hooks -->
     <hook src="hooks/afterPrepareHook.js" type="after_prepare"/>
@@ -27,13 +31,9 @@
       <preference name="ANDROID_5_PATH_PREFIX" default="/" />
 
       <preference name="DEEPLINK_2_SCHEME" default=" " />
-      <preference name="DEEPLINK_2_HOST" default=" " />
       <preference name="DEEPLINK_3_SCHEME" default=" " />
-      <preference name="DEEPLINK_3_HOST" default=" " />
       <preference name="DEEPLINK_4_SCHEME" default=" " />
-      <preference name="DEEPLINK_4_HOST" default=" " />
       <preference name="DEEPLINK_5_SCHEME" default=" " />
-      <preference name="DEEPLINK_5_HOST" default=" " />
 
       <js-module src="www/deeplink.js" name="deeplink">
         <runs/>
@@ -71,6 +71,7 @@
 
     <!-- ios -->
     <platform name="ios">
+      
         <hook src="hooks/iosBeforePrepareHook.js" type="before_prepare" />
 
         <js-module src="www/deeplink.js" name="deeplink">
@@ -97,17 +98,9 @@
         <config-file target="*-Debug.plist" parent="com.apple.developer.associated-domains">
           <array>
               <string>applinks:$DEEPLINK_HOST</string>
-          </array>
-          <array>
               <string>applinks:$DEEPLINK_2_HOST</string>
-          </array>
-          <array>
               <string>applinks:$DEEPLINK_3_HOST</string>
-          </array>
-          <array>
               <string>applinks:$DEEPLINK_4_HOST</string>
-          </array>
-          <array>
               <string>applinks:$DEEPLINK_5_HOST</string>
           </array>
         </config-file>
@@ -115,16 +108,9 @@
         <config-file target="*-Release.plist" parent="com.apple.developer.associated-domains">
           <array>
               <string>applinks:$DEEPLINK_HOST</string>
-          </array>          <array>
               <string>applinks:$DEEPLINK_2_HOST</string>
-          </array>
-          <array>
               <string>applinks:$DEEPLINK_3_HOST</string>
-          </array>
-          <array>
               <string>applinks:$DEEPLINK_4_HOST</string>
-          </array>
-          <array>
               <string>applinks:$DEEPLINK_5_HOST</string>
           </array>
         </config-file>
